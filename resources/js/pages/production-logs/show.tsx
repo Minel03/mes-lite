@@ -32,7 +32,7 @@ export default function ShowProductionLog({ productionLog }: { productionLog: Pr
                         <div className="flex flex-wrap items-center gap-3">
                             <h1 className="text-2xl font-semibold tracking-normal">Production Log #{productionLog.id}</h1>
                         </div>
-                        <p className="text-sm text-muted-foreground">Recorded entry details.</p>
+                        <p className="text-muted-foreground text-sm">Recorded entry details.</p>
                     </div>
 
                     <div className="flex gap-2">
@@ -70,7 +70,7 @@ export default function ShowProductionLog({ productionLog }: { productionLog: Pr
 function Detail({ label, value }: { label: string; value: string }) {
     return (
         <div className="rounded-lg border p-4">
-            <div className="text-sm text-muted-foreground">{label}</div>
+            <div className="text-muted-foreground text-sm">{label}</div>
             <div className="mt-1 font-medium">{value}</div>
         </div>
     );

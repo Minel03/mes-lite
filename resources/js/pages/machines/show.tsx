@@ -43,7 +43,7 @@ export default function ShowMachine({ machine }: { machine: Machine }) {
                                 {machine.status}
                             </Badge>
                         </div>
-                        <p className="text-sm text-muted-foreground">{machine.machine_name}</p>
+                        <p className="text-muted-foreground text-sm">{machine.machine_name}</p>
                     </div>
 
                     <div className="flex gap-2">
@@ -80,7 +80,7 @@ export default function ShowMachine({ machine }: { machine: Machine }) {
 function Detail({ label, value }: { label: string; value: string }) {
     return (
         <div className="rounded-lg border p-4">
-            <div className="text-sm text-muted-foreground">{label}</div>
+            <div className="text-muted-foreground text-sm">{label}</div>
             <div className="mt-1 font-medium">{value}</div>
         </div>
     );

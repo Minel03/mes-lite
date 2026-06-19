@@ -27,7 +27,7 @@ export default function ProductsIndex({ products }: { products: Product[] }) {
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                         <h1 className="text-2xl font-semibold tracking-normal">Products</h1>
-                        <p className="text-sm text-muted-foreground">Manage your product catalog and SKUs.</p>
+                        <p className="text-muted-foreground text-sm">Manage your product catalog and SKUs.</p>
                     </div>
 
                     <Button asChild>
@@ -41,7 +41,7 @@ export default function ProductsIndex({ products }: { products: Product[] }) {
                 <div className="overflow-hidden rounded-lg border">
                     <div className="overflow-x-auto">
                         <table className="w-full text-sm">
-                            <thead className="border-b bg-muted/50 text-left text-muted-foreground">
+                            <thead className="bg-muted/50 text-muted-foreground border-b text-left">
                                 <tr>
                                     <th className="px-4 py-3 font-medium">SKU</th>
                                     <th className="px-4 py-3 font-medium">Name</th>
@@ -57,7 +57,7 @@ export default function ProductsIndex({ products }: { products: Product[] }) {
                                     <tr key={product.id} className="border-b last:border-b-0">
                                         <td className="px-4 py-3 font-mono text-xs font-medium">{product.sku}</td>
                                         <td className="px-4 py-3 font-medium">{product.name}</td>
-                                        <td className="px-4 py-3 text-muted-foreground">{product.category ?? '—'}</td>
+                                        <td className="text-muted-foreground px-4 py-3">{product.category ?? '—'}</td>
                                         <td className="px-4 py-3">{product.unit}</td>
                                         <td className="px-4 py-3">{Number(product.price).toFixed(2)}</td>
                                         <td className="px-4 py-3">
@@ -104,7 +104,7 @@ export default function ProductsIndex({ products }: { products: Product[] }) {
 
                                 {products.length === 0 && (
                                     <tr>
-                                        <td colSpan={7} className="px-4 py-12 text-center text-muted-foreground">
+                                        <td colSpan={7} className="text-muted-foreground px-4 py-12 text-center">
                                             No products have been added yet.
                                         </td>
                                     </tr>

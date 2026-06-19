@@ -25,13 +25,7 @@ type TransactionForm = {
     notes: string;
 };
 
-export default function CreateInventoryTransaction({
-    inventories,
-    types,
-}: {
-    inventories: InventoryOption[];
-    types: string[];
-}) {
+export default function CreateInventoryTransaction({ inventories, types }: { inventories: InventoryOption[]; types: string[] }) {
     const { data, setData, post, errors, processing } = useForm<TransactionForm>({
         inventory_id: '',
         type: 'In',
@@ -55,7 +49,7 @@ export default function CreateInventoryTransaction({
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                         <h1 className="text-2xl font-semibold tracking-normal">Record transaction</h1>
-                        <p className="text-sm text-muted-foreground">Log a stock movement for an inventory item.</p>
+                        <p className="text-muted-foreground text-sm">Log a stock movement for an inventory item.</p>
                     </div>
                     <Button variant="outline" asChild>
                         <Link href={route('inventory.index')} prefetch>
@@ -82,7 +76,7 @@ export default function CreateInventoryTransaction({
                                 </SelectContent>
                             </Select>
                             {selected && (
-                                <p className="text-xs text-muted-foreground">
+                                <p className="text-muted-foreground text-xs">
                                     Current stock: <span className="font-medium">{selected.quantity}</span>
                                 </p>
                             )}

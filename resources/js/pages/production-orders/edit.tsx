@@ -69,7 +69,7 @@ export default function EditProductionOrder({
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                         <h1 className="text-2xl font-semibold tracking-normal">Edit {productionOrder.order_number}</h1>
-                        <p className="text-sm text-muted-foreground">Update quantities, operator assignment, and order status.</p>
+                        <p className="text-muted-foreground text-sm">Update quantities, operator assignment, and order status.</p>
                     </div>
 
                     <Button variant="outline" asChild>
@@ -129,7 +129,14 @@ function ProductionOrderFields({
 
             <div className="grid gap-2">
                 <Label htmlFor="quantity">Quantity</Label>
-                <Input id="quantity" type="number" min="1" value={data.quantity} onChange={(event) => setData('quantity', event.target.value)} required />
+                <Input
+                    id="quantity"
+                    type="number"
+                    min="1"
+                    value={data.quantity}
+                    onChange={(event) => setData('quantity', event.target.value)}
+                    required
+                />
                 <InputError message={errors.quantity} />
             </div>
 
@@ -175,8 +182,8 @@ function ProductionOrderFields({
                     classNames={{
                         control: ({ isFocused }) =>
                             cn(
-                                'flex h-10 w-full rounded-md border border-input bg-background px-3 text-sm ring-offset-background items-center justify-between transition-colors',
-                                isFocused && 'ring-2 ring-ring ring-offset-2 outline-hidden'
+                                'border-input bg-background ring-offset-background flex h-10 w-full items-center justify-between rounded-md border px-3 text-sm transition-colors',
+                                isFocused && 'ring-ring ring-2 ring-offset-2 outline-hidden',
                             ),
                         placeholder: () => 'text-muted-foreground text-sm',
                         input: () => 'text-foreground text-sm',
@@ -188,9 +195,9 @@ function ProductionOrderFields({
                         menuList: () => 'p-1',
                         option: ({ isFocused, isSelected }) =>
                             cn(
-                                'relative flex w-full cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-hidden transition-colors',
+                                'relative flex w-full cursor-default items-center rounded-sm px-2 py-1.5 text-sm outline-hidden transition-colors select-none',
                                 isFocused && 'bg-accent text-accent-foreground',
-                                isSelected && 'bg-primary text-primary-foreground'
+                                isSelected && 'bg-primary text-primary-foreground',
                             ),
                         noOptionsMessage: () => 'text-muted-foreground py-6 text-center text-sm',
                     }}

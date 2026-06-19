@@ -7,6 +7,7 @@ use App\Models\Inventory;
 use App\Models\InventoryTransaction;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
 use Inertia\Response;
 
@@ -56,7 +57,7 @@ class InventoryController extends Controller
 
         InventoryTransaction::query()->create([
             ...$validated,
-            'user_id' => auth()->id(),
+            'user_id' => Auth::id(),
         ]);
 
         // Adjust quantity based on transaction type
@@ -106,7 +107,9 @@ class InventoryController extends Controller
             'location' => ['nullable', 'string', 'max:255'],
         ]);
 
-        $inventory->update($validated);
+        $inventory->minimum_quantity = (int) $validated['minimum_quantity'];
+        $inventory->location = $validated['location'];
+        $inventory->save();
 
         return to_route('inventory.show', $inventory);
     }
@@ -116,7 +119,7 @@ class InventoryController extends Controller
      */
     public function destroy(Inventory $inventory): RedirectResponse
     {
-        $inventory->delete();
+        Inventory::destroy($inventory->id);
 
         return to_route('inventory.index');
     }

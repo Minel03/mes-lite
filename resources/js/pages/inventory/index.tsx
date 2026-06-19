@@ -5,9 +5,7 @@ import { type BreadcrumbItem, type InventoryItem } from '@/types';
 import { Head, Link } from '@inertiajs/react';
 import { Eye, Plus } from 'lucide-react';
 
-const breadcrumbs: BreadcrumbItem[] = [
-    { title: 'Inventory', href: '/inventory' },
-];
+const breadcrumbs: BreadcrumbItem[] = [{ title: 'Inventory', href: '/inventory' }];
 
 export default function InventoryIndex({ inventories }: { inventories: InventoryItem[] }) {
     return (
@@ -18,7 +16,7 @@ export default function InventoryIndex({ inventories }: { inventories: Inventory
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                         <h1 className="text-2xl font-semibold tracking-normal">Inventory</h1>
-                        <p className="text-sm text-muted-foreground">Monitor stock levels and record transactions.</p>
+                        <p className="text-muted-foreground text-sm">Monitor stock levels and record transactions.</p>
                     </div>
 
                     <Button asChild>
@@ -32,7 +30,7 @@ export default function InventoryIndex({ inventories }: { inventories: Inventory
                 <div className="overflow-hidden rounded-lg border">
                     <div className="overflow-x-auto">
                         <table className="w-full text-sm">
-                            <thead className="border-b bg-muted/50 text-left text-muted-foreground">
+                            <thead className="bg-muted/50 text-muted-foreground border-b text-left">
                                 <tr>
                                     <th className="px-4 py-3 font-medium">SKU</th>
                                     <th className="px-4 py-3 font-medium">Product</th>
@@ -48,8 +46,8 @@ export default function InventoryIndex({ inventories }: { inventories: Inventory
                                     <tr key={inv.id} className="border-b last:border-b-0">
                                         <td className="px-4 py-3 font-mono text-xs font-medium">{inv.product?.sku}</td>
                                         <td className="px-4 py-3 font-medium">{inv.product?.name}</td>
-                                        <td className="px-4 py-3 text-muted-foreground">{inv.product?.category ?? '—'}</td>
-                                        <td className="px-4 py-3 text-muted-foreground">{inv.location ?? '—'}</td>
+                                        <td className="text-muted-foreground px-4 py-3">{inv.product?.category ?? '—'}</td>
+                                        <td className="text-muted-foreground px-4 py-3">{inv.location ?? '—'}</td>
                                         <td className="px-4 py-3">{inv.minimum_quantity}</td>
                                         <td className="px-4 py-3">
                                             <Badge
@@ -78,7 +76,7 @@ export default function InventoryIndex({ inventories }: { inventories: Inventory
 
                                 {inventories.length === 0 && (
                                     <tr>
-                                        <td colSpan={7} className="px-4 py-12 text-center text-muted-foreground">
+                                        <td colSpan={7} className="text-muted-foreground px-4 py-12 text-center">
                                             No inventory records found. Add a product first.
                                         </td>
                                     </tr>

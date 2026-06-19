@@ -48,7 +48,7 @@ export default function EditProduct({ product, units }: { product: Product; unit
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                         <h1 className="text-2xl font-semibold tracking-normal">Edit product</h1>
-                        <p className="text-sm text-muted-foreground">{product.sku}</p>
+                        <p className="text-muted-foreground text-sm">{product.sku}</p>
                     </div>
 
                     <Button variant="outline" asChild>

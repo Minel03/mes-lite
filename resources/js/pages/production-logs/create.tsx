@@ -29,13 +29,7 @@ type ProductionLogForm = {
     timestamp: string;
 };
 
-export default function CreateProductionLog({
-    machines,
-    users,
-}: {
-    machines: Machine[];
-    users: { id: number; name: string }[];
-}) {
+export default function CreateProductionLog({ machines, users }: { machines: Machine[]; users: { id: number; name: string }[] }) {
     // Current local time in YYYY-MM-DDTHH:MM format
     const now = new Date();
     now.setMinutes(now.getMinutes() - now.getTimezoneOffset());
@@ -68,7 +62,7 @@ export default function CreateProductionLog({
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                         <h1 className="text-2xl font-semibold tracking-normal">Log Production</h1>
-                        <p className="text-sm text-muted-foreground">Record a new production entry against a machine.</p>
+                        <p className="text-muted-foreground text-sm">Record a new production entry against a machine.</p>
                     </div>
 
                     <Button variant="outline" asChild>
@@ -110,8 +104,8 @@ export default function CreateProductionLog({
                                 classNames={{
                                     control: ({ isFocused }) =>
                                         cn(
-                                            'flex h-10 w-full rounded-md border border-input bg-background px-3 text-sm ring-offset-background items-center justify-between transition-colors',
-                                            isFocused && 'ring-2 ring-ring ring-offset-2 outline-hidden'
+                                            'border-input bg-background ring-offset-background flex h-10 w-full items-center justify-between rounded-md border px-3 text-sm transition-colors',
+                                            isFocused && 'ring-ring ring-2 ring-offset-2 outline-hidden',
                                         ),
                                     placeholder: () => 'text-muted-foreground text-sm',
                                     input: () => 'text-foreground text-sm',
@@ -119,13 +113,14 @@ export default function CreateProductionLog({
                                     singleValue: () => 'text-foreground text-sm',
                                     indicatorsContainer: () => 'flex items-center gap-1',
                                     dropdownIndicator: () => 'text-muted-foreground hover:text-foreground',
-                                    menu: () => 'mt-2 border border-input bg-popover text-popover-foreground rounded-md shadow-md overflow-hidden z-50',
+                                    menu: () =>
+                                        'mt-2 border border-input bg-popover text-popover-foreground rounded-md shadow-md overflow-hidden z-50',
                                     menuList: () => 'p-1',
                                     option: ({ isFocused, isSelected }) =>
                                         cn(
-                                            'relative flex w-full cursor-default select-none items-center rounded-sm px-2 py-1.5 text-sm outline-hidden transition-colors',
+                                            'relative flex w-full cursor-default items-center rounded-sm px-2 py-1.5 text-sm outline-hidden transition-colors select-none',
                                             isFocused && 'bg-accent text-accent-foreground',
-                                            isSelected && 'bg-primary text-primary-foreground'
+                                            isSelected && 'bg-primary text-primary-foreground',
                                         ),
                                     noOptionsMessage: () => 'text-muted-foreground py-6 text-center text-sm',
                                 }}

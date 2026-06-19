@@ -3,7 +3,7 @@ import { Button } from '@/components/ui/button';
 import AppLayout from '@/layouts/app-layout';
 import { type BreadcrumbItem, type Product } from '@/types';
 import { Head, Link } from '@inertiajs/react';
-import { ArrowLeft, Pencil, TrendingDown, TrendingUp, SlidersHorizontal } from 'lucide-react';
+import { ArrowLeft, Pencil, SlidersHorizontal, TrendingDown, TrendingUp } from 'lucide-react';
 
 const transactionTypeMeta: Record<string, { label: string; className: string }> = {
     In: {
@@ -36,7 +36,7 @@ export default function ShowProduct({ product }: { product: Product }) {
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                         <h1 className="text-2xl font-semibold tracking-normal">{product.name}</h1>
-                        <p className="font-mono text-sm text-muted-foreground">{product.sku}</p>
+                        <p className="text-muted-foreground font-mono text-sm">{product.sku}</p>
                     </div>
 
                     <div className="flex gap-2">
@@ -65,7 +65,7 @@ export default function ShowProduct({ product }: { product: Product }) {
 
                 {product.description && (
                     <div className="rounded-lg border p-4">
-                        <p className="text-sm text-muted-foreground">{product.description}</p>
+                        <p className="text-muted-foreground text-sm">{product.description}</p>
                     </div>
                 )}
 
@@ -75,9 +75,7 @@ export default function ShowProduct({ product }: { product: Product }) {
                         <div className="flex items-center justify-between border-b px-4 py-3">
                             <h2 className="font-semibold">Inventory</h2>
                             <Button variant="outline" size="sm" asChild>
-                                <Link href={route('inventory.show', inv.id)}>
-                                    View full inventory
-                                </Link>
+                                <Link href={route('inventory.show', inv.id)}>View full inventory</Link>
                             </Button>
                         </div>
                         <div className="grid gap-4 p-4 sm:grid-cols-3">
@@ -93,12 +91,10 @@ export default function ShowProduct({ product }: { product: Product }) {
                         {/* Recent transactions */}
                         {inv.transactions && inv.transactions.length > 0 && (
                             <div className="border-t">
-                                <p className="px-4 py-2 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-                                    Recent transactions
-                                </p>
+                                <p className="text-muted-foreground px-4 py-2 text-xs font-medium tracking-wide uppercase">Recent transactions</p>
                                 <div className="overflow-x-auto">
                                     <table className="w-full text-sm">
-                                        <thead className="border-b bg-muted/50 text-left text-muted-foreground">
+                                        <thead className="bg-muted/50 text-muted-foreground border-b text-left">
                                             <tr>
                                                 <th className="px-4 py-2 font-medium">Type</th>
                                                 <th className="px-4 py-2 font-medium">Qty</th>
@@ -121,9 +117,9 @@ export default function ShowProduct({ product }: { product: Product }) {
                                                             </Badge>
                                                         </td>
                                                         <td className="px-4 py-2 font-medium">{tx.quantity}</td>
-                                                        <td className="px-4 py-2 text-muted-foreground">{tx.reference ?? '—'}</td>
+                                                        <td className="text-muted-foreground px-4 py-2">{tx.reference ?? '—'}</td>
                                                         <td className="px-4 py-2">{tx.user_name}</td>
-                                                        <td className="px-4 py-2 text-muted-foreground">{tx.created_at}</td>
+                                                        <td className="text-muted-foreground px-4 py-2">{tx.created_at}</td>
                                                     </tr>
                                                 );
                                             })}
@@ -139,18 +135,10 @@ export default function ShowProduct({ product }: { product: Product }) {
     );
 }
 
-function DetailCard({
-    label,
-    value,
-    highlight,
-}: {
-    label: string;
-    value: string;
-    highlight?: 'success' | 'danger';
-}) {
+function DetailCard({ label, value, highlight }: { label: string; value: string; highlight?: 'success' | 'danger' }) {
     return (
         <div className="rounded-lg border p-4">
-            <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">{label}</p>
+            <p className="text-muted-foreground text-xs font-medium tracking-wide uppercase">{label}</p>
             <p
                 className={`mt-1 text-lg font-semibold ${
                     highlight === 'success'

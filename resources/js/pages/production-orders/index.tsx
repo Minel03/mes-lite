@@ -34,7 +34,7 @@ export default function ProductionOrdersIndex({ productionOrders }: { production
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                         <h1 className="text-2xl font-semibold tracking-normal">Production Orders</h1>
-                        <p className="text-sm text-muted-foreground">Plan quantities, operators, deadlines, and production status.</p>
+                        <p className="text-muted-foreground text-sm">Plan quantities, operators, deadlines, and production status.</p>
                     </div>
 
                     <Button asChild>
@@ -48,7 +48,7 @@ export default function ProductionOrdersIndex({ productionOrders }: { production
                 <div className="overflow-hidden rounded-lg border">
                     <div className="overflow-x-auto">
                         <table className="w-full text-sm">
-                            <thead className="border-b bg-muted/50 text-left text-muted-foreground">
+                            <thead className="bg-muted/50 text-muted-foreground border-b text-left">
                                 <tr>
                                     <th className="px-4 py-3 font-medium">Order</th>
                                     <th className="px-4 py-3 font-medium">Product</th>
@@ -102,7 +102,7 @@ export default function ProductionOrdersIndex({ productionOrders }: { production
 
                                 {productionOrders.length === 0 && (
                                     <tr>
-                                        <td colSpan={7} className="px-4 py-12 text-center text-muted-foreground">
+                                        <td colSpan={7} className="text-muted-foreground px-4 py-12 text-center">
                                             No production orders have been created yet.
                                         </td>
                                     </tr>

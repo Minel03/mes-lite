@@ -47,7 +47,7 @@ export default function CreateProduct({ units }: { units: string[] }) {
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                         <h1 className="text-2xl font-semibold tracking-normal">Create product</h1>
-                        <p className="text-sm text-muted-foreground">Add a new product to the catalog.</p>
+                        <p className="text-muted-foreground text-sm">Add a new product to the catalog.</p>
                     </div>
 
                     <Button variant="outline" asChild>

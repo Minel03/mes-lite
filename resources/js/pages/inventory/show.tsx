@@ -34,7 +34,7 @@ export default function ShowInventory({ inventory }: { inventory: InventoryItem 
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                         <h1 className="text-2xl font-semibold tracking-normal">{inventory.product?.name}</h1>
-                        <p className="font-mono text-sm text-muted-foreground">{inventory.product?.sku}</p>
+                        <p className="text-muted-foreground font-mono text-sm">{inventory.product?.sku}</p>
                     </div>
                     <div className="flex gap-2">
                         <Button variant="outline" asChild>
@@ -61,24 +61,23 @@ export default function ShowInventory({ inventory }: { inventory: InventoryItem 
                 {/* Stock summary cards */}
                 <div className="grid gap-4 sm:grid-cols-3">
                     <div className="rounded-lg border p-4">
-                        <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">Current stock</p>
+                        <p className="text-muted-foreground text-xs font-medium tracking-wide uppercase">Current stock</p>
                         <p
                             className={`mt-1 text-2xl font-bold ${inventory.is_low_stock ? 'text-red-600 dark:text-red-400' : 'text-emerald-600 dark:text-emerald-400'}`}
                         >
-                            {inventory.quantity}{' '}
-                            <span className="text-base font-normal text-muted-foreground">{inventory.product?.unit}</span>
+                            {inventory.quantity} <span className="text-muted-foreground text-base font-normal">{inventory.product?.unit}</span>
                         </p>
                         {inventory.is_low_stock && <p className="mt-1 text-xs text-red-600 dark:text-red-400">⚠ Below minimum threshold</p>}
                     </div>
                     <div className="rounded-lg border p-4">
-                        <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">Minimum stock</p>
+                        <p className="text-muted-foreground text-xs font-medium tracking-wide uppercase">Minimum stock</p>
                         <p className="mt-1 text-2xl font-bold">
                             {inventory.minimum_quantity}{' '}
-                            <span className="text-base font-normal text-muted-foreground">{inventory.product?.unit}</span>
+                            <span className="text-muted-foreground text-base font-normal">{inventory.product?.unit}</span>
                         </p>
                     </div>
                     <div className="rounded-lg border p-4">
-                        <p className="text-xs font-medium uppercase tracking-wide text-muted-foreground">Location</p>
+                        <p className="text-muted-foreground text-xs font-medium tracking-wide uppercase">Location</p>
                         <p className="mt-1 text-lg font-semibold">{inventory.location ?? '—'}</p>
                     </div>
                 </div>
@@ -90,7 +89,7 @@ export default function ShowInventory({ inventory }: { inventory: InventoryItem 
                     </div>
                     <div className="overflow-x-auto">
                         <table className="w-full text-sm">
-                            <thead className="border-b bg-muted/50 text-left text-muted-foreground">
+                            <thead className="bg-muted/50 text-muted-foreground border-b text-left">
                                 <tr>
                                     <th className="px-4 py-3 font-medium">Type</th>
                                     <th className="px-4 py-3 font-medium">Qty</th>
@@ -115,16 +114,16 @@ export default function ShowInventory({ inventory }: { inventory: InventoryItem 
                                                     </Badge>
                                                 </td>
                                                 <td className="px-4 py-3 font-medium">{tx.quantity}</td>
-                                                <td className="px-4 py-3 text-muted-foreground">{tx.reference ?? '—'}</td>
-                                                <td className="px-4 py-3 text-muted-foreground">{tx.notes ?? '—'}</td>
+                                                <td className="text-muted-foreground px-4 py-3">{tx.reference ?? '—'}</td>
+                                                <td className="text-muted-foreground px-4 py-3">{tx.notes ?? '—'}</td>
                                                 <td className="px-4 py-3">{tx.user_name}</td>
-                                                <td className="px-4 py-3 text-muted-foreground">{tx.created_at}</td>
+                                                <td className="text-muted-foreground px-4 py-3">{tx.created_at}</td>
                                             </tr>
                                         );
                                     })
                                 ) : (
                                     <tr>
-                                        <td colSpan={6} className="px-4 py-12 text-center text-muted-foreground">
+                                        <td colSpan={6} className="text-muted-foreground px-4 py-12 text-center">
                                             No transactions recorded yet.
                                         </td>
                                     </tr>

@@ -34,7 +34,7 @@ export default function MachinesIndex({ machines }: { machines: Machine[] }) {
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                         <h1 className="text-2xl font-semibold tracking-normal">Machines</h1>
-                        <p className="text-sm text-muted-foreground">Track equipment status, location, and maintenance dates.</p>
+                        <p className="text-muted-foreground text-sm">Track equipment status, location, and maintenance dates.</p>
                     </div>
 
                     <Button asChild>
@@ -48,7 +48,7 @@ export default function MachinesIndex({ machines }: { machines: Machine[] }) {
                 <div className="overflow-hidden rounded-lg border">
                     <div className="overflow-x-auto">
                         <table className="w-full text-sm">
-                            <thead className="border-b bg-muted/50 text-left text-muted-foreground">
+                            <thead className="bg-muted/50 text-muted-foreground border-b text-left">
                                 <tr>
                                     <th className="px-4 py-3 font-medium">Code</th>
                                     <th className="px-4 py-3 font-medium">Machine</th>
@@ -98,7 +98,7 @@ export default function MachinesIndex({ machines }: { machines: Machine[] }) {
 
                                 {machines.length === 0 && (
                                     <tr>
-                                        <td colSpan={6} className="px-4 py-12 text-center text-muted-foreground">
+                                        <td colSpan={6} className="text-muted-foreground px-4 py-12 text-center">
                                             No machines have been registered yet.
                                         </td>
                                     </tr>

@@ -57,7 +57,7 @@ export default function EditMachine({ machine, statuses }: { machine: Machine; s
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                         <h1 className="text-2xl font-semibold tracking-normal">Edit {machine.machine_code}</h1>
-                        <p className="text-sm text-muted-foreground">Update machine identity, status, and maintenance planning.</p>
+                        <p className="text-muted-foreground text-sm">Update machine identity, status, and maintenance planning.</p>
                     </div>
 
                     <Button variant="outline" asChild>

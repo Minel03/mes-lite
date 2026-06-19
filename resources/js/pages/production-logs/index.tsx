@@ -26,7 +26,7 @@ export default function ProductionLogsIndex({ productionLogs }: { productionLogs
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                         <h1 className="text-2xl font-semibold tracking-normal">Production Logs</h1>
-                        <p className="text-sm text-muted-foreground">Track updates on quantity produced by machine and operator.</p>
+                        <p className="text-muted-foreground text-sm">Track updates on quantity produced by machine and operator.</p>
                     </div>
 
                     <Button asChild>
@@ -40,7 +40,7 @@ export default function ProductionLogsIndex({ productionLogs }: { productionLogs
                 <div className="overflow-hidden rounded-lg border">
                     <div className="overflow-x-auto">
                         <table className="w-full text-sm">
-                            <thead className="border-b bg-muted/50 text-left text-muted-foreground">
+                            <thead className="bg-muted/50 text-muted-foreground border-b text-left">
                                 <tr>
                                     <th className="px-4 py-3 font-medium">Machine</th>
                                     <th className="px-4 py-3 font-medium">Operator</th>
@@ -54,7 +54,7 @@ export default function ProductionLogsIndex({ productionLogs }: { productionLogs
                                     <tr key={log.id} className="border-b last:border-b-0">
                                         <td className="px-4 py-3 font-medium">
                                             <div>{log.machine_name}</div>
-                                            <div className="text-xs text-muted-foreground">{log.machine_code}</div>
+                                            <div className="text-muted-foreground text-xs">{log.machine_code}</div>
                                         </td>
                                         <td className="px-4 py-3">{log.operator_name}</td>
                                         <td className="px-4 py-3 font-semibold">{log.quantity_produced} units</td>
@@ -87,7 +87,7 @@ export default function ProductionLogsIndex({ productionLogs }: { productionLogs
 
                                 {productionLogs.length === 0 && (
                                     <tr>
-                                        <td colSpan={5} className="px-4 py-12 text-center text-muted-foreground">
+                                        <td colSpan={5} className="text-muted-foreground px-4 py-12 text-center">
                                             No production logs have been recorded yet.
                                         </td>
                                     </tr>

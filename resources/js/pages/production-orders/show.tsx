@@ -45,7 +45,7 @@ export default function ShowProductionOrder({ productionOrder }: { productionOrd
                                 {productionOrder.status}
                             </Badge>
                         </div>
-                        <p className="text-sm text-muted-foreground">{productionOrder.product_name}</p>
+                        <p className="text-muted-foreground text-sm">{productionOrder.product_name}</p>
                     </div>
 
                     <div className="flex gap-2">
@@ -83,7 +83,7 @@ export default function ShowProductionOrder({ productionOrder }: { productionOrd
 function Detail({ label, value }: { label: string; value: string }) {
     return (
         <div className="rounded-lg border p-4">
-            <div className="text-sm text-muted-foreground">{label}</div>
+            <div className="text-muted-foreground text-sm">{label}</div>
             <div className="mt-1 font-medium">{value}</div>
         </div>
     );

@@ -38,7 +38,7 @@ export default function EditInventory({ inventory }: { inventory: InventoryItem 
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                         <h1 className="text-2xl font-semibold tracking-normal">Edit inventory settings</h1>
-                        <p className="text-sm text-muted-foreground">{inventory.product?.name}</p>
+                        <p className="text-muted-foreground text-sm">{inventory.product?.name}</p>
                     </div>
                     <Button variant="outline" asChild>
                         <Link href={route('inventory.show', inventory.id)} prefetch>
@@ -60,7 +60,7 @@ export default function EditInventory({ inventory }: { inventory: InventoryItem 
                                 onChange={(e) => setData('minimum_quantity', e.target.value)}
                                 required
                             />
-                            <p className="text-xs text-muted-foreground">An alert will show when stock falls at or below this value.</p>
+                            <p className="text-muted-foreground text-xs">An alert will show when stock falls at or below this value.</p>
                             <InputError message={errors.minimum_quantity} />
                         </div>
 

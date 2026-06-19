@@ -53,7 +53,7 @@ export default function CreateMachine({ statuses }: { statuses: Machine['status'
                 <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
                     <div>
                         <h1 className="text-2xl font-semibold tracking-normal">Create machine</h1>
-                        <p className="text-sm text-muted-foreground">Register a production machine for MES tracking.</p>
+                        <p className="text-muted-foreground text-sm">Register a production machine for MES tracking.</p>
                     </div>
 
                     <Button variant="outline" asChild>
